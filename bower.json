@@ -1,0 +1,24 @@
+{
+  "name": "agencia_vintage",
+  "authors": [
+    "Roberto <robertooliveiraestudo@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "bootstrap": "^3.3.6",
+    "jquery.scrollTo": "^2.1.2"
+  }
+}
