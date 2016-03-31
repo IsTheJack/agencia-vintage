@@ -107,7 +107,7 @@ header .social-media-container {
     text-decoration: none;
 }
 
-@media screen and(min-width: 720px) {
+@media screen and (min-width: 720px) {
     /*Header Toggle*/
     header.header-toggle {
         -webkit-transition: 0.8s;
@@ -136,30 +136,6 @@ header .social-media-container {
     }
 }
 
-/*Menu mobil*/
-
-@media screen and (max-width: 720px) {
-    header .logo-topo {
-        -webkit-transform: scale(.5);
-        -ms-transform: scale(.5);
-        -o-transform: scale(.5);
-        transform: scale(.5);
-    }
-
-    header nav {
-        position: absolute;
-        right: 0;
-        top: -75px;
-    }
-
-    .main-menu ul {
-        float: right;
-    }
-
-    .menu-item {
-        display: block;
-    }
-}
 
 /*Galery*/
 .galery {
@@ -350,5 +326,38 @@ footer .sprite.logo-rodape {
     footer .sprite.logo-rodape {
         margin: 0 auto;
         float: none;
+    }
+}
+
+/*Mobil*/
+
+@media screen and (max-width: 720px) {
+    header .logo-topo {
+        -webkit-transform: scale(.5);
+        -ms-transform: scale(.5);
+        -o-transform: scale(.5);
+        transform: scale(.5);
+    }
+
+    header nav {
+        position: absolute;
+        right: 0;
+        top: -75px;
+    }
+
+    .main-menu ul {
+        float: right;
+    }
+
+    .menu-item {
+        display: block;
+    }
+
+    .content {
+        padding-top: 184px;
+    }
+
+    .linked {
+        top: -184px;
     }
 }
