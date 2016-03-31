@@ -9,27 +9,19 @@
 .sprite.botao-slider{background-position: 0 0; width: 212px; height: 212px;}
 .sprite.botao-slider-branco{background-position: 0 -222px; width: 212px; height: 212px;}
 .sprite.circle1{background-position: 0 -444px;}
-.sprite.editing{background-position: 0px -66px;background-size: 35px;width: 35px;height: 32px;}
+.sprite.editing{background-position: 0px -67px;background-size: 35px;width: 35px;height: 35px;}
 .sprite.flag{background-position: 0 -1698px;}
-.sprite.facebook{background-position: 0 -232px; width: 33px; height: 30px; background-size: 80px}
-.sprite.insta{background-position: 0 -380px; width: 33px; height: 30px; background-size: 80px}
-.sprite.gmail{background-position: 0 -348px; width: 33px; height: 30px; background-size: 80px}
+.sprite.facebook{background-position: 0 -237px; width: 33px; height: 30px; background-size: 80px}
+.sprite.insta{background-position: 0 -386px; width: 33px; height: 30px; background-size: 80px}
+.sprite.gmail{background-position: 0 -353px; width: 33px; height: 30px; background-size: 80px}
 .sprite.interface1{    background-position: 0px -182px;background-size: 35px;width: 35px;height: 32px;}
-.sprite.light{background-position: 0px -185px;background-size: 30px;width: 35px;height: 30px;}
-.sprite.multimedia{background-position: 0 -355px;background-size: 50px;width: 50px;height: 55px}
-.sprite.pen{background-position: 0 -410px;background-size: 50px;width: 47px;height: 55px;}
-.sprite.people{background-position: 0 -464px;background-size: 50px;width: 47px;height: 55px;}
+.sprite.light{background-position: 0px -188px;background-size: 30px;width: 35px;height: 31px;}
+.sprite.multimedia{background-position: 0 -359px;background-size: 50px;width: 50px;height: 55px}
+.sprite.pen{background-position: 0 -414px;background-size: 50px;width: 47px;height: 55px;}
+.sprite.people{background-position: 0 -468px;background-size: 50px;width: 47px;height: 55px;}
 .sprite.technology{background-position: 0 -5250px;}
 .sprite.logo-topo{background-position: 0 -5772px; width: 203px; height: 103px;}
 .sprite.logo-rodape{background-position: 0 -5885px; width: 305px; height: 184px;}
-.sprite.cliente-01{background-position: 0 -6079px; width: 400px; height: 400px;}
-.sprite.cliente-02{background-position: 0 -6489px; width: 400px; height: 400px;}
-.sprite.cliente-03{background-position: 0 -6899px; width: 400px; height: 400px;}
-.sprite.cliente-04{background-position: 0 -7309px; width: 400px; height: 400px;}
-.sprite.cliente-05{background-position: 0 -7719px; width: 400px; height: 400px;}
-.sprite.cliente-06{background-position: 0 -8129px; width: 400px; height: 400px;}
-.sprite.cliente-07{background-position: 0 -8539px; width: 400px; height: 400px;}
-.sprite.cliente-08{background-position: 0 -8949px; width: 400px; height: 400px;}
 
 /*Helpers*/
 .semantic {
@@ -61,7 +53,7 @@ header {
     z-index: 999;
 }
 
-header.header-toggle .logo-topo {
+header .logo-topo {
     -webkit-transition: 0.8s;
     -o-transition: 0.8s;
     transition: 0.8s;
@@ -71,7 +63,7 @@ header.header-toggle .logo-topo {
     margin-bottom: 0;
 }
 
-header.header-toggle .social-media-container {
+header .social-media-container {
     -webkit-transition: 0.8s;
     -o-transition: 0.8s;
     transition: 0.8s;
@@ -95,17 +87,6 @@ header.header-toggle .social-media-container {
     display: inline;
     position: relative;
     list-style: none;
-}
-
-.main-menu ul::after {
-    content: "";
-    position: absolute;
-    bottom: -13px;
-    left: 2.5%;
-    height: 10px;
-    width: 95%;
-    border: 2px solid #000;
-    border-top: 0;
 }
 
 .menu-item {
@@ -201,6 +182,10 @@ header.header-toggle .social-media-container {
     font-size: 1.9em;
 }
 
+.clear-content-item {
+    padding: 0;
+}
+
 .linked {
     z-index: -1;
     position: absolute;
@@ -242,6 +227,28 @@ header.header-toggle .social-media-container {
     margin: 0;
     text-align: center;
     font-size: .9em;
+}
+
+/*Cases*/
+.cases {
+    text-align: center;
+}
+
+.img-cases {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.img-cases img {
+    width: 250px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .img-cases img {
+        width: 100%;
+    }
 }
 
 /*Footer*/
