@@ -11,22 +11,22 @@
 <body>
     <header>
         <div class="container">
-            <div class="row">
+            <div class="row social-media-container hidden-xs hidden-sm">
                 <div class="social-medias col-md-12">
                     <ul>
-                        <li class="sprite facebook"></li>
-                        <li class="sprite insta"></li>
-                        <li class="sprite gmail"></li>
+                        <a href="#"><li class="sprite facebook"></li></a>
+                        <a href="#"><li class="sprite insta"></li></a>
+                        <a href="#"><li class="sprite gmail"></li></a>
                     </ul>
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-sm-4 col-md-6">
                 <h1 class="semantic">Agência Vintage</h1>
                 <a href="/"><div class='sprite logo-topo header-logo'></div></a>
             </div>
 
-            <div class="col-md-6 text-right">
+            <div class="col-sm-8 col-md-6 text-right">
                 <div class="row">
                     <div class="main-menu-container">
                         <nav class="main-menu">
@@ -45,7 +45,8 @@
 
     <div class="content">
         <section class="galery">
-            <img src="img/Imagens/slider/Imagem Slider - 01.png" alt="">
+            <img src="img/Imagens/slider/SLOGAN.png" alt="Agência Vintage" class="img-slogan">
+            <img src="img/Imagens/slider/Imagem Slider - 01.png" class="img-item">
         </section>
 
         <section class="content-item">
@@ -81,21 +82,21 @@
             <div class="container">
                 <h1><div class="sprite editing title-icon position3"></div>Serviços</h1>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <section class="card-show">
                             <div class="sprite pen"></div>
                             <h1>Comunicação Corporativa</h1>
                             <h2>Criação de conteúdos e<br> estratégia de Branding</h2>
                         </section>
                     </div>
-                    <div class="col-md-4 text-center">
+                    <div class="col-sm-4 text-center">
                         <section class="card-show">
                             <div class="sprite people"></div>
                             <h1>Social Media</h1>
                             <h2>Foco em Facebook, Google, <br> Twitter, Instagram e Linkedin</h2>
                         </section>
                     </div>
-                    <div class="col-md-4 text-center">
+                    <div class="col-sm-4 text-center">
                         <section class="card-show">
                             <div class="sprite multimedia"></div>
                             <h1>Web Design</h1>
@@ -117,32 +118,32 @@
         Rodapé
     </footer>
 
-                            <div style="background-color: #ccc;">
-                                <div class='sprite botao-slider'></div>
-                        <div class='sprite botao-slider-branco'></div>
-                        <div class='sprite circle1'></div>
-                        <div class='sprite editing'></div>
-                        <div class='sprite facebook'></div>
-                        <div class='sprite flag'></div>
-                        <div class='sprite gmail'></div>
-                        <div class='sprite insta'></div>
-                        <div class='sprite interface1'></div>
-                        <div class='sprite light'></div>
-                        <div class='sprite multimedia'></div>
-                        <div class='sprite pen'></div>
-                        <div class='sprite people'></div>
-                        <div class='sprite technology'></div>
-                        <div class='sprite logo-topo'></div>
-                        <div class='sprite logo-rodape'></div>
-                        <div class='sprite cliente-01'></div>
-                        <div class='sprite cliente-02'></div>
-                        <div class='sprite cliente-03'></div>
-                        <div class='sprite cliente-04'></div>
-                        <div class='sprite cliente-05'></div>
-                        <div class='sprite cliente-06'></div>
-                        <div class='sprite cliente-07'></div>
-                        <div class='sprite cliente-08'></div>
-                            </div>
+        <div style="background-color: #ccc;">
+            <div class='sprite botao-slider'></div>
+            <div class='sprite botao-slider-branco'></div>
+            <div class='sprite circle1'></div>
+            <div class='sprite editing'></div>
+            <div class='sprite facebook'></div>
+            <div class='sprite flag'></div>
+            <div class='sprite gmail'></div>
+            <div class='sprite insta'></div>
+            <div class='sprite interface1'></div>
+            <div class='sprite light'></div>
+            <div class='sprite multimedia'></div>
+            <div class='sprite pen'></div>
+            <div class='sprite people'></div>
+            <div class='sprite technology'></div>
+            <div class='sprite logo-topo'></div>
+            <div class='sprite logo-rodape'></div>
+            <div class='sprite cliente-01'></div>
+            <div class='sprite cliente-02'></div>
+            <div class='sprite cliente-03'></div>
+            <div class='sprite cliente-04'></div>
+            <div class='sprite cliente-05'></div>
+            <div class='sprite cliente-06'></div>
+            <div class='sprite cliente-07'></div>
+            <div class='sprite cliente-08'></div>
+        </div>
 
     <!-- Js -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -150,8 +151,30 @@
     <script src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
     <script src="bower_components/jquery-cycle2/build/jquery.cycle2.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(window).resize(function() {
+            var alturaSlogan = $('.galery .img-slogan').innerHeight();
+            var alturaImg = $('.galery .img-item').innerHeight();
+            var diferencaAlturas = alturaImg - alturaSlogan;
+            var larguraImg = $('.galery .img-item').innerWidth();
+            var larguraSlogan = $('.galery .img-slogan').innerWidth();
+            $('.galery .img-slogan').css('margin-top', diferencaAlturas / 2);
+            $('.galery .img-slogan').css('margin-left', larguraImg / 2 - larguraSlogan / 2);
+        });
+
+        $(window).load(function() {
             $('.main-menu ul').localScroll({duration: 800});
+            $(window).trigger('resize');
+        });
+
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            if(scroll > 200) {
+                if(!$("header").hasClass('header-toggle'))
+                    $("header").addClass('header-toggle');
+            }
+            else if($("header").hasClass('header-toggle')) {
+                $("header").removeClass('header-toggle');
+            }
         });
     </script>
 </body>
