@@ -26,7 +26,7 @@
                 <a href="/"><div class='sprite logo-topo header-logo'></div></a>
             </div>
 
-            <div class="col-sm-8 col-md-6 text-right">
+            <nav class="col-sm-8 col-md-6 text-right">
                 <div class="row">
                     <div class="main-menu-container">
                         <nav class="main-menu">
@@ -39,7 +39,7 @@
                         </nav>
                     </div>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
 
@@ -125,30 +125,44 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">Endereço</div>
-                <div class="col-sm-6">Logo e Redes Sociais</div>
+                <div class="col-sm-6">
+                    <address>
+                        <h1><div class="sprite circle1 address-icon"></div> Resende | Brasil</h1>
+                        <div class="address-item">
+                            Av. Cel Prof Antonio Esteves,<br>
+                            nº 01, Campo de Aviação <br>
+                            Cep: 27523-000
+                        </div>
+
+                        <div class="sprite technology address-icon"></div>
+                        <div class="address-item">
+                            +55 24 9 00000000 <br>
+                            +55 24 9 00000000
+                        </div>
+
+                        <div class="sprite flag address-icon"></div>
+                        <div class="address-item">
+                            contato@agenciavintage.com
+                        </div>
+                    </address>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="social-medias col-md-12">
+                            <ul>
+                                <a href="#"><li class="sprite facebook"></li></a>
+                                <a href="#"><li class="sprite insta"></li></a>
+                                <a href="#"><li class="sprite gmail"></li></a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='sprite logo-rodape'></div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-
-        <div style="background-color: #ccc;">
-            <div class='sprite botao-slider'></div>
-            <div class='sprite botao-slider-branco'></div>
-            <div class='sprite circle1'></div>
-            <div class='sprite editing'></div>
-            <div class='sprite facebook'></div>
-            <div class='sprite flag'></div>
-            <div class='sprite gmail'></div>
-            <div class='sprite insta'></div>
-            <div class='sprite interface1'></div>
-            <div class='sprite light'></div>
-            <div class='sprite multimedia'></div>
-            <div class='sprite pen'></div>
-            <div class='sprite people'></div>
-            <div class='sprite technology'></div>
-            <div class='sprite logo-topo'></div>
-            <div class='sprite logo-rodape'></div>
-        </div>
 
     <!-- Js -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -162,8 +176,10 @@
             var diferencaAlturas = alturaImg - alturaSlogan;
             var larguraImg = $('.galery .img-item').innerWidth();
             var larguraSlogan = $('.galery .img-slogan').innerWidth();
+            $('.galery .img-slogan').addClass('img-slogan-hidden');
             $('.galery .img-slogan').css('margin-top', diferencaAlturas / 2);
             $('.galery .img-slogan').css('margin-left', larguraImg / 2 - larguraSlogan / 2);
+            $('.galery .img-slogan').addClass('img-slogan-show');
         });
 
         $(window).load(function() {

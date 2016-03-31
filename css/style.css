@@ -8,9 +8,9 @@
 .sprite{background: url('../img/tini_sprite.png') no-repeat top left; width: 512px; height: 512px;}
 .sprite.botao-slider{background-position: 0 0; width: 212px; height: 212px;}
 .sprite.botao-slider-branco{background-position: 0 -222px; width: 212px; height: 212px;}
-.sprite.circle1{background-position: 0 -444px;}
+.sprite.circle1{background-position: -14px -51px;background-size: 45px;width: 17px;height: 25px;}
 .sprite.editing{background-position: 0px -67px;background-size: 35px;width: 35px;height: 35px;}
-.sprite.flag{background-position: 0 -1698px;}
+.sprite.flag{background-position: 0 -84px;background-size: 25px;width: 25px;height: 26px;}
 .sprite.facebook{background-position: 0 -237px; width: 33px; height: 30px; background-size: 80px}
 .sprite.insta{background-position: 0 -386px; width: 33px; height: 30px; background-size: 80px}
 .sprite.gmail{background-position: 0 -353px; width: 33px; height: 30px; background-size: 80px}
@@ -19,9 +19,9 @@
 .sprite.multimedia{background-position: 0 -359px;background-size: 50px;width: 50px;height: 55px}
 .sprite.pen{background-position: 0 -414px;background-size: 50px;width: 47px;height: 55px;}
 .sprite.people{background-position: 0 -468px;background-size: 50px;width: 47px;height: 55px;}
-.sprite.technology{background-position: 0 -5250px;}
+.sprite.technology{background-position: 0 -260px;background-size: 25px;width: 25px;height: 26px;}
 .sprite.logo-topo{background-position: 0 -5772px; width: 203px; height: 103px;}
-.sprite.logo-rodape{background-position: 0 -5885px; width: 305px; height: 184px;}
+.sprite.logo-rodape{background-position: 0 -2335px;width: 122px;height: 73px;background-size: 200px;}
 
 /*Helpers*/
 .semantic {
@@ -62,6 +62,7 @@ header .logo-topo {
     transition: scale(1);
     margin-bottom: 0;
 }
+
 
 header .social-media-container {
     -webkit-transition: 0.8s;
@@ -106,31 +107,58 @@ header .social-media-container {
     text-decoration: none;
 }
 
-/*Header Toggle*/
-header.header-toggle {
-    -webkit-transition: 0.8s;
-    -o-transition: 0.8s;
-    transition: 0.8s;
-    max-height: auto;
-    padding: 0;
+@media screen and(min-width: 720px) {
+    /*Header Toggle*/
+    header.header-toggle {
+        -webkit-transition: 0.8s;
+        -o-transition: 0.8s;
+        transition: 0.8s;
+        max-height: auto;
+        padding: 0;
+    }
+
+    header.header-toggle .logo-topo {
+        -webkit-transition: 0.8s;
+        -o-transition: 0.8s;
+        transition: 0.8s;
+        -webkit-transform: scale(.4);
+        -ms-transform: scale(.4);
+        -o-transform: scale(.4);
+        transform: scale(.4);
+        margin-bottom: -15px;
+    }
+
+    header.header-toggle .social-media-container {
+        -webkit-transition: 0.8s;
+        -o-transition: 0.8s;
+        transition: 0.8s;
+        margin-top: -70px;
+    }
 }
 
-header.header-toggle .logo-topo {
-    -webkit-transition: 0.8s;
-    -o-transition: 0.8s;
-    transition: 0.8s;
-    -webkit-transform: scale(.4);
-    -ms-transform: scale(.4);
-    -o-transform: scale(.4);
-    transform: scale(.4);
-    margin-bottom: -15px;
-}
+/*Menu mobil*/
 
-header.header-toggle .social-media-container {
-    -webkit-transition: 0.8s;
-    -o-transition: 0.8s;
-    transition: 0.8s;
-    margin-top: -70px;
+@media screen and (max-width: 720px) {
+    header .logo-topo {
+        -webkit-transform: scale(.5);
+        -ms-transform: scale(.5);
+        -o-transform: scale(.5);
+        transform: scale(.5);
+    }
+
+    header nav {
+        position: absolute;
+        right: 0;
+        top: -75px;
+    }
+
+    .main-menu ul {
+        float: right;
+    }
+
+    .menu-item {
+        display: block;
+    }
 }
 
 /*Galery*/
@@ -147,9 +175,26 @@ header.header-toggle .social-media-container {
 }
 
 .galery .img-slogan {
+    margin-left: -1000px;
     position: absolute;
-    margin: 0 auto;
     max-width: 80%;
+}
+
+.galery .img-slogan-hidden {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+}
+
+.galery .img-slogan-show {
+    -webkit-transition: .8s;
+    -o-transition: .8s;
+    transition: .8s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
 }
 
 .cycle-slideshow { width: 100%; height: 400px; margin: auto; border: 1px solid #bbb; background: #ffc }
@@ -241,7 +286,7 @@ header.header-toggle .social-media-container {
 }
 
 .img-cases img {
-    width: 250px;
+    width: 280px;
     height: auto;
 }
 
@@ -255,5 +300,55 @@ header.header-toggle .social-media-container {
 
 footer {
     border-top: 7px solid #000;
-    height: 160px;
+    padding: 30px;
+}
+
+footer address h1 {
+    font-size: 1em;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+footer h1 .address-icon {
+    margin-right: 6px;
+    margin-left: 0;
+}
+
+footer .address-item {
+    line-height: 1;
+    font-size: .95em;
+    font-weight: bolder;
+    padding-left: 25px;
+    margin-bottom: 25px;
+}
+
+footer .address-icon {
+    float: left;
+    margin-top: -2px;
+    margin-left: -2px;
+}
+
+.flag.address-icon {
+    margin-top: -5px;
+    margin-right: 5px;
+}
+
+footer .sprite.logo-rodape {
+    float: right;
+    margin-top: 25px;
+}
+
+@media screen and (max-width: 720px) {
+    footer .social-medias {
+        text-align: center;
+    }
+
+    footer .social-medias ul {
+        padding: 0;
+    }
+
+    footer .sprite.logo-rodape {
+        margin: 0 auto;
+        float: none;
+    }
 }
